@@ -1,14 +1,19 @@
-<img src="docs/icon.png" width="128" alt="MDMacFanKit icon" align="right">
+<p align="center">
+  <img src="docs/icon.png" width="128" alt="MDMacFanKit icon">
+</p>
 
-# MDMacFanKit
+<h1 align="center">MDMacFanKit</h1>
 
-[![Build](https://github.com/amd1292/MDMacFanKit/actions/workflows/build.yml/badge.svg)](https://github.com/amd1292/MDMacFanKit/actions/workflows/build.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-![macOS 14+](https://img.shields.io/badge/macOS-14%2B-lightgrey)
+<p align="center">
+  <a href="https://github.com/amd1292/MDMacFanKit/actions/workflows/build.yml"><img src="https://github.com/amd1292/MDMacFanKit/actions/workflows/build.yml/badge.svg" alt="Build"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
+  <img src="https://img.shields.io/badge/macOS-14%2B-lightgrey" alt="macOS 14+">
+  <a href="https://github.com/amd1292/MDMacFanKit/releases/latest"><img src="https://img.shields.io/github/v/release/amd1292/MDMacFanKit" alt="Latest release"></a>
+</p>
 
-A free, open-source menu bar app for watching your Mac's temperatures and controlling its fans.
+<p align="center">A free, open-source menu bar app for watching your Mac's temperatures and controlling its fans.</p>
 
-<p>
+<p align="center">
   <img src="docs/menu.png" width="280" alt="Menu bar popover with temperature, fans, presets and sensor summary">
   <img src="docs/presets.png" width="440" alt="Preset editor with a temperature curve">
 </p>
