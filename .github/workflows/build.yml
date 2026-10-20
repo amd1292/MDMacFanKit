@@ -1,0 +1,23 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Swift version
+        run: swift --version
+      - name: Build app bundle
+        run: ./scripts/build-app.sh
+      - name: Check the bundle
+        run: |
+          test -x build/MDMacFanKit.app/Contents/MacOS/MDMacFanKit
+          test -x build/MDMacFanKit.app/Contents/Resources/MDFanHelper
+          test -x build/MDMacFanKit.app/Contents/Resources/mdfan
+          codesign --verify --verbose build/MDMacFanKit.app
+          build/MDMacFanKit.app/Contents/Resources/mdfan

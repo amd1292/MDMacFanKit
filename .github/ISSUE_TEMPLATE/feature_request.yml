@@ -1,0 +1,20 @@
+name: Feature request
+description: Suggest an idea or an improvement
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would you like to do?
+      description: The problem or need, before any solution.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: How could MDMacFanKit help?
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else?
+      description: Mac model, screenshots, similar apps that do it well.

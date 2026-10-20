@@ -1,0 +1,38 @@
+name: Bug report
+description: Something doesn't work as expected
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Mac model
+      description: Output of `sysctl -n hw.model`, plus the marketing name if you know it.
+      placeholder: Mac14,10 (MacBook Pro 16-inch, M2 Pro)
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version
+      placeholder: macOS 26.1
+    validations:
+      required: true
+  - type: textarea
+    id: fans
+    attributes:
+      label: Output of `mdfan fans` and `mdfan temps`
+      description: Run `/Applications/MDMacFanKit.app/Contents/Resources/mdfan fans` and `... temps`.
+      render: text
+  - type: textarea
+    id: logs
+    attributes:
+      label: Helper log (if fan control is involved)
+      description: "`/usr/bin/log show --last 10m --predicate 'process == \"com.mdmacfankit.helper\"'`"
+      render: text
