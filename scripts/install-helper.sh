@@ -23,5 +23,7 @@ fi
 install -d -m 755 -o root -g wheel /Library/PrivilegedHelperTools
 install -m 755 -o root -g wheel "$SRC/MDFanHelper" "$BIN"
 install -m 644 -o root -g wheel "$SRC/$LABEL.plist" "$PLIST"
+# A downloaded app carries the quarantine flag; launchd cannot show the Gatekeeper prompt for a daemon.
+xattr -d com.apple.quarantine "$BIN" "$PLIST" 2>/dev/null || true
 launchctl bootstrap system "$PLIST"
 echo "Installed $LABEL"
