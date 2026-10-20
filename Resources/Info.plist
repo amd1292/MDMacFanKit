@@ -8,6 +8,8 @@
 	<string>MDMacFanKit</string>
 	<key>CFBundleExecutable</key>
 	<string>MDMacFanKit</string>
+	<key>CFBundleIconFile</key>
+	<string>AppIcon</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.mdmacfankit.app</string>
 	<key>CFBundleInfoDictionaryVersion</key>
