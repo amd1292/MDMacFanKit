@@ -11,9 +11,13 @@ Thanks for helping. Bug fixes, support for more Mac models, sensor naming, UI po
 ## Building
 
 ```bash
-swift build                 # debug build of every target
-./scripts/build-app.sh      # release build of build/MDMacFanKit.app
+swift build                     # debug build of every target
+./scripts/build-app.sh          # release build of build/MDMacFanKit.app
+./scripts/package-release.sh    # the same, zipped for a GitHub release
+swift scripts/make-icon.swift   # redraw Resources/AppIcon.icns and docs/icon.png
 ```
+
+The icon is vector art drawn in `scripts/make-icon.swift`; change it there rather than editing the image files. SF Symbols may not be used in app icons, which is why the fan is drawn by hand.
 
 The project builds with the Command Line Tools alone, and should stay that way:
 

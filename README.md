@@ -1,3 +1,5 @@
+<img src="docs/icon.png" width="128" alt="MDMacFanKit icon" align="right">
+
 # MDMacFanKit
 
 [![Build](https://github.com/amd1292/MDMacFanKit/actions/workflows/build.yml/badge.svg)](https://github.com/amd1292/MDMacFanKit/actions/workflows/build.yml)
@@ -27,7 +29,23 @@ A free, open-source menu bar app for watching your Mac's temperatures and contro
 
 ## Install
 
-There are no signed binaries yet, so build from source. Only the Command Line Tools are needed (`xcode-select --install`); Xcode is optional.
+### Download
+
+1. Download `MDMacFanKit-<version>-arm64.zip` from the [latest release](https://github.com/amd1292/MDMacFanKit/releases/latest) (Apple Silicon).
+2. Unzip it and move `MDMacFanKit.app` to `/Applications`.
+3. Open it. The app is free and not notarized by Apple, so the first launch is blocked with *"Apple could not verify…"*. Click **Done**, then go to *System Settings → Privacy & Security*, scroll down and click **Open Anyway** next to MDMacFanKit. You only need to do this once.
+
+   Or, from Terminal:
+
+   ```bash
+   xattr -dr com.apple.quarantine /Applications/MDMacFanKit.app
+   ```
+
+Intel Macs: build from source (below); there is no Intel download yet.
+
+### Build from source
+
+Only the Command Line Tools are needed (`xcode-select --install`); Xcode is optional.
 
 ```bash
 git clone https://github.com/amd1292/MDMacFanKit.git
@@ -96,7 +114,7 @@ sudo mdfan auto        all fans back to automatic
 | `Sources/MDFanHelper` | The root LaunchDaemon that performs SMC writes |
 | `Sources/MDMacFanKit` | The SwiftUI menu bar app |
 | `Sources/mdfan` | The command-line tool |
-| `scripts/` | Bundle build and helper install/uninstall scripts |
+| `scripts/` | Bundle build, release zip, icon generator, helper install/uninstall |
 
 The app samples sensors every 1–5 seconds (configurable), works out the speed each fan should have from the active preset, and sends only the changes to the helper over XPC. Presets are stored in `~/Library/Application Support/MDMacFanKit/presets.json`.
 
